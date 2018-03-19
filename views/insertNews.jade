@@ -1,0 +1,64 @@
+doctype html
+html(lang='en')
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+		meta(name='description', content='')
+		meta(name='author', content='')
+		title Clean Blog - Start Bootstrap Theme
+		// Bootstrap core CSS
+		link(href='vendor/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+		// Custom fonts for this template
+		link(href='vendor/font-awesome/css/font-awesome.min.css', rel='stylesheet', type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic', rel='stylesheet', type='text/css')
+		link(href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800', rel='stylesheet', type='text/css')
+		// Custom styles for this template
+		link(href='stylesheets/clean-blog.min.css', rel='stylesheet')
+	body
+		// Page Header
+		header.masthead(style="background-image: url('images/home-bg.jpg')")
+			.overlay
+			.container
+				.row
+					.col-lg-8.col-md-10.mx-auto
+						.site-heading
+							h1 I &ltinsert&gt news
+		// Main Content
+		.container
+			.row
+				.col-lg-8.col-md-10.mx-auto
+					h2 Create a Story
+					form#insertNews(name='insertNews', method='POST', action='/insertNews')
+						.control-group
+							.form-group.floating-label-form-group.controls
+								label Title
+								input#insertTitle.form-control(type='text', placeholder='Title', name='insertTitle', required='', data-validation-required-message='Please enter a title')
+								p.help-block.text-danger
+						.control-group
+							.form-group.floating-label-form-group.controls
+								label Body
+								input#insertBody.form-control(type='text', placeholder='Body', name='insertBody', required='', data-validation-required-message='Please enter a body.')
+								p.help-block.text-danger
+						.control-group
+							.form-group.col-xs-12.floating-label-form-group.controls
+								label Author
+								input#insertAuthor.form-control(type='text', placeholder='Author', name='insertAuthor', required='', data-validation-required-message='Please enter an author.')
+								p.help-block.text-danger
+						.control-group
+							.form-group.col-xs-12.floating-label-form-group.controls
+								label Date
+								input#insertDate.form-control(type='hidden', name='insertDate', required='', data-validation-required-message='Please enter a date.')
+								p.help-block.text-danger
+						br
+						#success
+						.form-group
+							button#sendMessageButton.btn.btn-primary(type='submit') Submit
+		// Bootstrap core JavaScript
+		script(src='vendor/jquery/jquery.min.js')
+		script(src='vendor/bootstrap/js/bootstrap.bundle.min.js')
+		// Contact Form JavaScript
+		script(src='javascripts/jqBootstrapValidation.js')
+		script(src='javascripts/contact_me.js')
+		// Custom scripts for this template
+		script(src='javascripts/clean-blog.min.js')
+		script(src='javascripts/insertNewsClient.js')
